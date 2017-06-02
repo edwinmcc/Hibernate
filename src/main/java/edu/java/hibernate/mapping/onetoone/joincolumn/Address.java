@@ -1,6 +1,4 @@
-package edu.java.hibernate.model;
-
-import org.hibernate.annotations.GeneratorType;
+package edu.java.hibernate.mapping.onetoone.joincolumn;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -68,9 +66,5 @@ public class Address implements Serializable {
     public void setCountry(String country) {
         this.country = country;
     }
-
-
-
-
 
 }

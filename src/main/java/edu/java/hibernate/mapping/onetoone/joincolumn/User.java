@@ -1,4 +1,4 @@
-package edu.java.hibernate.model;
+package edu.java.hibernate.mapping.onetoone.joincolumn;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -8,7 +8,6 @@ import java.io.Serializable;
  */
 
 /*
-
 create table HUser
 (
     userId bigint primary key auto_increment,
@@ -20,7 +19,6 @@ create table HUser
     addressId bigint,
     foreign key (addressId) references Address(addressId) ON DELETE CASCADE
 ) auto_increment=1000000;
-
 */
 
 @Entity
