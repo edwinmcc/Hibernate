@@ -1,7 +1,5 @@
 package edu.java.hibernate;
 
-import edu.java.hibernate.mapping.onetoone.mapsid.Address;
-import edu.java.hibernate.mapping.onetoone.mapsid.User;
 import edu.java.hibernate.util.HibernateUtil;
 import org.hibernate.Session;
 
@@ -10,7 +8,8 @@ import java.math.BigDecimal;
 /**
  * Hello world!
  *
- */
+ * /
+ /*
 public class HibernateApplication
 {
 
@@ -54,9 +53,6 @@ public class HibernateApplication
         //session.create
     }
 
-    private void startApplication() {
-
-    }
 
     private void compareFloat() {
         BigDecimal b1=new BigDecimal("4.5");
@@ -72,10 +68,10 @@ public class HibernateApplication
     {
         HibernateApplication hibernateApplication = new HibernateApplication();
         hibernateApplication.init();
-        hibernateApplication.startApplication();
         hibernateApplication.addAllUsers();
         //hibernateApplication.compareFloat();
         hibernateApplication.closeResources();
     }
 
 }
+ */

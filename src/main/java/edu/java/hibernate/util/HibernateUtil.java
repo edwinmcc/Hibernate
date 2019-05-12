@@ -1,7 +1,16 @@
 package edu.java.hibernate.util;
 
-import edu.java.hibernate.mapping.onetoone.joincolumn.Address;
-import edu.java.hibernate.mapping.onetoone.joincolumn.User;
+import com.ordermate.dao.PersistentObject;
+import com.ordermate.dao.SalesAccount;
+import edu.java.hibernate.mapping.manytoone.Post;
+import edu.java.hibernate.mapping.manytoone.PostComment;
+import edu.java.hibernate.mapping.onetoone.bidirectional.Husband;
+import edu.java.hibernate.mapping.onetoone.bidirectional.Wife;
+import edu.java.hibernate.mapping.onetoone.mapsid.Student;
+import edu.java.hibernate.mapping.onetoone.mapsid.StudentDetails;
+import edu.java.hibernate.mapping.onetoone.unidirectional.Address;
+import edu.java.hibernate.mapping.onetoone.unidirectional.User;
+import edu.java.hibernate.model.Computer;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,10 +26,21 @@ public class HibernateUtil {
     private static SessionFactory sessionFactory=null;
 
     private static void addClasses(Configuration configuration) {
-        //configuration.addAnnotatedClass(edu.java.hibernate.model.Contact.class);
-        configuration.addPackage("edu.java.hibernate.model");
+        //configuration.addPackage("edu.java.hibernate.model");
+        configuration.addPackage("com.ordermate.dao");
+        //configuration.addAnnotatedClass(User.class);
+        //configuration.addAnnotatedClass(Address.class);
+        configuration.addAnnotatedClass(PersistentObject.class);
+        configuration.addAnnotatedClass(SalesAccount.class);
+        configuration.addAnnotatedClass(Post.class);
+        configuration.addAnnotatedClass(PostComment.class);
+        configuration.addAnnotatedClass(Computer.class);
         configuration.addAnnotatedClass(User.class);
         configuration.addAnnotatedClass(Address.class);
+        configuration.addAnnotatedClass(Student.class);
+        configuration.addAnnotatedClass(StudentDetails.class);
+        configuration.addAnnotatedClass(Husband.class);
+        configuration.addAnnotatedClass(Wife.class);
     }
 
     public static SessionFactory createSessionFactory() {
@@ -42,7 +62,12 @@ public class HibernateUtil {
         return sessionFactory;
     }
 
-    public static Session getNewSession() {
+    public static Session getNewSession()
+    {
+        if(sessionFactory == null)
+        {
+            createSessionFactory();
+        }
         return sessionFactory.openSession();
     }
 

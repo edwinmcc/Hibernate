@@ -7,6 +7,8 @@ import java.util.Set;
 /**
  * Created by egnanasigamony on 29/05/2017.
  */
+
+/*
 @Entity
 @Table(name="Category")
 public class Category {
@@ -57,3 +59,4 @@ public class Category {
 
 
 }
+*/
